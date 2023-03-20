@@ -12,55 +12,86 @@ function App() {
     </div>
   );
 }
+function LeftArrow({ className, style, onClick }) {
+  return (
+    <div
+      className={className + " arrow"}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <img src="/left.png" alt="" width="50px" />
+    </div>
+  );
+}
+function RightArrow({ className, style, onClick }) {
+  return (
+    <div
+      className={className}
+      style={{ ...style, backgroundColor: "red" }}
+      onClick={onClick}
+    >
+      <img src="/right.png" alt="" width="50px" />
+    </div>
+  );
+}
+
 function SimpleSlider() {
-  // var settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  // };
   const settings = {
     customPaging: function (i) {
-      return (
-        // <img src="/latest.png" width="10px" />
-        <div className="dots"></div>
-      );
+      return <div className="dots"></div>;
     },
+    // appendDots: (dots) => (
+    //   <div
+    //     // style={{
+    //     //   backgroundColor: "#ddd",
+    //     //   borderRadius: "10px",
+    //     //   padding: "50px",
+    //     //   opacity: 1
+    //     // }}
+    //   >
+    //     <ul style={{ margin: "0px" }}> {dots} </ul>
+    //   </div>
+    // ),
     dots: true,
-    // dotsClass: "slick-dots slick-thumb",
+    dotsClass: "slick-dots slick-thumb",
+    // nextArrow: <RightArrow />,
+    // prevArrow: <LeftArrow />,
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    // indicator: false,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     initialSlide: 0,
     rows: 2,
     // adaptiveHeight: true,
     // variableWidth: true,
     // swipeToSlide: true,
     responsive: [
-      // {
-      //   breakpoint: 1024,
-      //   settings: {
-      //     rows: 1,
-      //     slidesToShow: 3,
-      //     slidesToScroll: 3,
-      //     infinite: true,
-      //     dots: true,
-      //   },
-      // },
       {
-        breakpoint: 600,
+        breakpoint: 1200,
         settings: {
+          infinite: false,
+          rows: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          infinite: false,
           rows: 1,
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           initialSlide: 0,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 500,
         settings: {
+          rows: 1,
           slidesToShow: 1,
           slidesToScroll: 1,
         },
