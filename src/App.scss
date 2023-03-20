@@ -1,0 +1,50 @@
+.App {
+  .slider-container-container {
+    width: 100%;
+    // outline: 2px solid green;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+
+    .slider-container {
+      // outline: 2px solid red;
+      width: 80%;
+
+      .indicator {
+        text-decoration: none;
+        list-style: none;
+        width: 20px;
+        height: 5px;
+        background: royalblue;
+      }
+
+      .indicator-icon {
+        display: none;
+        list-style: none;
+      }
+
+      .card-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .deal-card-container {
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.dots {
+  background: red;
+  width: 10px;
+  height: 5px;
+  border-radius: 5px;
+  &.active{
+    width: 20px;
+  }
+}
